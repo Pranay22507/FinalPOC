@@ -7,7 +7,7 @@ import { MaterialModule } from '../../material/material.module';
 import { ToastrModule } from 'ngx-toastr';
 import { SellerListComponent } from './seller-list.component';
 import { ToastrService } from 'ngx-toastr';
-import { SellerData } from '../registrationFields';
+import {SellerFormComponent} from '../seller-form/seller-form.component'
 describe('SellerListComponent', () => {
   let component: SellerListComponent;
   let fixture: ComponentFixture<SellerListComponent>;
@@ -23,7 +23,7 @@ describe('SellerListComponent', () => {
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
       ],
-      declarations: [SellerListComponent],
+      declarations: [SellerListComponent,SellerFormComponent],
       providers: [ToastrService],
     }).compileComponents();
   });

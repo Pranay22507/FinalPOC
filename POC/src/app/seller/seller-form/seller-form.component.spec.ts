@@ -11,7 +11,7 @@ import { SellerFormComponent } from './seller-form.component';
 import { MaterialModule } from '../../material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SellerData } from '../registrationFields';
-// import { atLeastOneDealtypeReq } from '../atLeastOneDealtypeRequired';
+import { atLeastOneDealtypeReq } from '../atLeastOneDealtypeRequired';
 
 describe('SellerFormComponent', () => {
   let component: SellerFormComponent;
@@ -41,19 +41,19 @@ describe('SellerFormComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('ID for Registration form start with 1 initialized', () => {
+  it('ID for Registration form start with 1', () => {
     expect(component.Id).toEqual(1);
   });
   it('ID for Updation Record', () => {
     expect(component.updateId).toBeFalsy();
   });
-  it('Seller Data Initialized', () => {
+  it('Seller Data ', () => {
     expect(component.data).toBeFalsy();
   });
   it('Offices List', () => {
     expect(component.officesList).toEqual(['JP', 'UK', 'US', 'FR', 'AU', 'IT']);
   });
-  it('Offices List', () => {
+  it('Currencies List', () => {
     expect(component.currenciesList).toEqual(['USD', 'GBR', 'EUR']);
   });
 
@@ -91,7 +91,6 @@ describe('SellerFormComponent', () => {
     offices.setValue(['JP', 'UK', 'US', 'FR', 'AU', 'IT']);
     component.registrationFormControl.dealtype.value.bidded = true;
     component.registrationFormControl.dealtype.value.guaranteed = false;
-
     const contact_Name = component.registrationFormControl.contact_Name;
     contact_Name.setValue('John Wick');
     const email = component.registrationFormControl.email;
